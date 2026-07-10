@@ -5,7 +5,6 @@ export default defineConfig({
   plugins: [react()],
   base: '/HAIRCRAFT-UNISEX-SALON/',
   server: {
-    port: 5173,
-    open: true
+    port: 5173
   }
 })
