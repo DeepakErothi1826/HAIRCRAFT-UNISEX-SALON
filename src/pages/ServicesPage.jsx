@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+const BASE = import.meta.env.BASE_URL;
+
 const services = [
   {
     id: 1,
     title: 'Hairdresser Services',
-    img: '/images/service-hair.png',
+    img: `${BASE}images/service-hair.png`,
     tagline: 'Balayage, Highlights, Expert Cuts',
     desc: 'From precision cuts to transformative colour, our stylists bring your vision to life. Whether you want a subtle balayage or a bold restyle, every service is tailored to your face shape, hair type, and lifestyle.',
     price: '₹1,500+',
@@ -14,7 +16,7 @@ const services = [
   {
     id: 2,
     title: 'Grooming',
-    img: '/images/service-grooming.png',
+    img: `${BASE}images/service-grooming.png`,
     tagline: 'Eyebrow Shaping, Threading, Shaves',
     desc: 'Clean lines, sharp edges, and a flawless finish. Our grooming services are designed for both men and women who appreciate meticulous attention to detail and a refreshing experience.',
     price: '₹500+',
@@ -23,7 +25,7 @@ const services = [
   {
     id: 3,
     title: 'Facial Treatments',
-    img: '/images/service-facial.png',
+    img: `${BASE}images/service-facial.png`,
     tagline: 'Premium Facials, Acne Care, Skin Rejuvenation',
     desc: 'Reveal your natural glow with our premium facial treatments. Using world-class products and advanced techniques, we target your unique skin concerns for visible, lasting results.',
     price: '₹1,200+',
@@ -32,7 +34,7 @@ const services = [
   {
     id: 4,
     title: 'Spa & Wellness',
-    img: '/images/service-spa.png',
+    img: `${BASE}images/service-spa.png`,
     tagline: 'Waxing, Manicure, Pedicure, Bridal Packages',
     desc: 'Unwind and indulge in our spa & wellness services. Our bridal packages are comprehensive, ensuring you look and feel your absolute best on your special day.',
     price: '₹800+',

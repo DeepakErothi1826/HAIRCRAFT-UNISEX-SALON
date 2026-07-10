@@ -12,25 +12,27 @@ import {
 /*  DATA                                                               */
 /* ------------------------------------------------------------------ */
 
+const BASE = import.meta.env.BASE_URL;
+
 const services = [
   {
     title: 'Hairdresser services',
-    img: '/images/service-hair.png',
+    img: `${BASE}images/service-hair.png`,
     subtitle: 'Balayage, Highlights, Expert Cuts',
   },
   {
     title: 'Grooming',
-    img: '/images/service-grooming.png',
+    img: `${BASE}images/service-grooming.png`,
     subtitle: 'Eyebrow Shaping, Threading, Shaves',
   },
   {
     title: 'Facial treatments',
-    img: '/images/service-facial.png',
+    img: `${BASE}images/service-facial.png`,
     subtitle: 'Premium Facials, Acne, Skin Care',
   },
   {
     title: 'Spa & Wellness',
-    img: '/images/service-spa.png',
+    img: `${BASE}images/service-spa.png`,
     subtitle: 'Waxing, Manicure, Pedicure, Bridal',
   },
 ];
@@ -222,7 +224,7 @@ function HeroSection() {
                   }}
                 >
                   <img
-                    src="/images/hero-portrait.png"
+                    src={`${BASE}images/hero-portrait.png`}
                     alt="Haircraft Salon stylist at work"
                     className="w-full h-full object-cover"
                   />
@@ -370,7 +372,7 @@ function StudioSection() {
               }}
             >
               <motion.img
-                src="/images/salon-interior.png"
+                src={`${BASE}images/salon-interior.png`}
                 alt="Haircraft salon interior"
                 className="w-full h-full object-cover"
                 style={{ y: parallaxY }}

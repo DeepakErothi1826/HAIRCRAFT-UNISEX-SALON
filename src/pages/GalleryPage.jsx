@@ -3,10 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 /* ─── Gallery Data ─── */
+const BASE = import.meta.env.BASE_URL;
+
 const galleryItems = [
   {
     id: 1,
-    src: '/images/hero-portrait.png',
+    src: `${BASE}images/hero-portrait.png`,
     category: 'hair',
     title: 'Balayage Perfection',
     span: 'col-span-1 row-span-2',
@@ -14,7 +16,7 @@ const galleryItems = [
   },
   {
     id: 2,
-    src: '/images/service-hair.png',
+    src: `${BASE}images/service-hair.png`,
     category: 'hair',
     title: 'Golden Highlights',
     span: 'col-span-1 row-span-1',
@@ -22,7 +24,7 @@ const galleryItems = [
   },
   {
     id: 3,
-    src: '/images/service-grooming.png',
+    src: `${BASE}images/service-grooming.png`,
     category: 'grooming',
     title: 'Brow Sculpting',
     span: 'col-span-1 row-span-1',
@@ -30,7 +32,7 @@ const galleryItems = [
   },
   {
     id: 4,
-    src: '/images/service-facial.png',
+    src: `${BASE}images/service-facial.png`,
     category: 'skin',
     title: 'Glow Facial',
     span: 'col-span-1 row-span-2',
@@ -38,7 +40,7 @@ const galleryItems = [
   },
   {
     id: 5,
-    src: '/images/service-spa.png',
+    src: `${BASE}images/service-spa.png`,
     category: 'bridal',
     title: 'Bridal Prep',
     span: 'col-span-1 row-span-1',
@@ -46,7 +48,7 @@ const galleryItems = [
   },
   {
     id: 6,
-    src: '/images/salon-interior.png',
+    src: `${BASE}images/salon-interior.png`,
     category: 'hair',
     title: 'Studio Vibes',
     span: 'col-span-2 row-span-1',
@@ -54,7 +56,7 @@ const galleryItems = [
   },
   {
     id: 7,
-    src: '/images/hero-portrait.png',
+    src: `${BASE}images/hero-portrait.png`,
     category: 'bridal',
     title: 'Bridal Glamour',
     span: 'col-span-1 row-span-1',
@@ -62,7 +64,7 @@ const galleryItems = [
   },
   {
     id: 8,
-    src: '/images/service-hair.png',
+    src: `${BASE}images/service-hair.png`,
     category: 'hair',
     title: 'Layered Cut',
     span: 'col-span-1 row-span-1',
@@ -70,7 +72,7 @@ const galleryItems = [
   },
   {
     id: 9,
-    src: '/images/service-facial.png',
+    src: `${BASE}images/service-facial.png`,
     category: 'skin',
     title: 'Acne Treatment',
     span: 'col-span-1 row-span-1',
@@ -78,7 +80,7 @@ const galleryItems = [
   },
   {
     id: 10,
-    src: '/images/service-grooming.png',
+    src: `${BASE}images/service-grooming.png`,
     category: 'grooming',
     title: 'Clean Shave',
     span: 'col-span-1 row-span-2',
@@ -86,7 +88,7 @@ const galleryItems = [
   },
   {
     id: 11,
-    src: '/images/service-spa.png',
+    src: `${BASE}images/service-spa.png`,
     category: 'bridal',
     title: 'Nail Art',
     span: 'col-span-1 row-span-1',
@@ -94,7 +96,7 @@ const galleryItems = [
   },
   {
     id: 12,
-    src: '/images/salon-interior.png',
+    src: `${BASE}images/salon-interior.png`,
     category: 'hair',
     title: 'Color Magic',
     span: 'col-span-1 row-span-1',

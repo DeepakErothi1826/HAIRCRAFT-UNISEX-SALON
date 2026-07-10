@@ -186,6 +186,8 @@ function RotatingBadge() {
 /* ═══════════════════════════════════════════════
    ABOUT PAGE
    ═══════════════════════════════════════════════ */
+const BASE = import.meta.env.BASE_URL;
+
 export default function AboutPage() {
   const storyImageRef = useRef(null);
   const { scrollYProgress: storyScroll } = useScroll({
@@ -280,7 +282,7 @@ export default function AboutPage() {
             transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <img
-              src="/images/hero-portrait.png"
+              src={`${BASE}images/hero-portrait.png`}
               alt="Haircraft Salon"
               className="w-full h-full object-cover"
             />
@@ -321,7 +323,7 @@ export default function AboutPage() {
                   style={{ y: storyImageY }}
                 >
                   <img
-                    src="/images/salon-interior.png"
+                    src={`${BASE}images/salon-interior.png`}
                     alt="Inside Haircraft Salon"
                     className="w-full h-full object-cover scale-110"
                   />

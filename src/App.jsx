@@ -26,7 +26,7 @@ function AnimatedRoutes() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/HAIRCRAFT-UNISEX-SALON">
       <div className="min-h-screen bg-canvas">
         <Navbar />
         <AnimatedRoutes />
