@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { SEO, FloatingDot } from '../components/ui';
+import { BASE, VALUES, STATS } from '../utils/constants';
 
 /* ─── Reusable animated counter hook ─── */
 function useCountUp(target, duration = 2000, startCounting = false) {
@@ -90,62 +92,18 @@ const SparkleIcon = () => (
 );
 
 /* ─── Values Data ─── */
-const values = [
-  {
-    icon: <ScissorsIcon />,
-    title: 'Expert Craftsmanship',
-    description:
-      'Every stylist at Haircraft undergoes rigorous training. We stay ahead of global trends to bring you the finest techniques.',
-  },
-  {
-    icon: <HeartIcon />,
-    title: 'Personal Touch',
-    description:
-      'We listen, we understand, we create. Your vision is our mission. Every visit is a bespoke experience.',
-  },
-  {
-    icon: <SparkleIcon />,
-    title: 'Premium Quality',
-    description:
-      'We use only the finest products from world-renowned brands. Your hair deserves nothing but the best.',
-  },
-];
+const valueIcons = {
+  'Expert Craftsmanship': <ScissorsIcon />,
+  'Personal Touch': <HeartIcon />,
+  'Premium Quality': <SparkleIcon />,
+};
 
-/* ─── Stats Data ─── */
-const stats = [
-  { value: '8', suffix: '+', label: 'Years Experience' },
-  { value: '15000', suffix: '+', label: 'Happy Clients' },
-  { value: '4.9', suffix: '', label: 'Google Rating' },
-  { value: '125', suffix: '+', label: '5-Star Reviews' },
-];
+const values = VALUES.map((v) => ({
+  ...v,
+  icon: valueIcons[v.title],
+}));
 
-/* ─── Floating Decorative Dot ─── */
-function FloatingDot({ size = 8, color = 'bg-rose', top, left, right, bottom, delay = 0, duration = 5 }) {
-  return (
-    <motion.div
-      className={`absolute rounded-full ${color} pointer-events-none`}
-      style={{
-        width: size,
-        height: size,
-        top,
-        left,
-        right,
-        bottom,
-      }}
-      animate={{
-        y: [0, -18, -6, -22, 0],
-        x: [0, 8, -4, 10, 0],
-        opacity: [0.4, 0.7, 0.5, 0.8, 0.4],
-      }}
-      transition={{
-        duration,
-        repeat: Infinity,
-        ease: 'easeInOut',
-        delay,
-      }}
-    />
-  );
-}
+const stats = STATS;
 
 /* ─── Rotating Text Badge ─── */
 function RotatingBadge() {
@@ -186,8 +144,6 @@ function RotatingBadge() {
 /* ═══════════════════════════════════════════════
    ABOUT PAGE
    ═══════════════════════════════════════════════ */
-const BASE = import.meta.env.BASE_URL;
-
 export default function AboutPage() {
   const storyImageRef = useRef(null);
   const { scrollYProgress: storyScroll } = useScroll({
@@ -228,6 +184,7 @@ export default function AboutPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
     >
+      <SEO title="About" description="Learn the story behind Haircraft — a premium unisex salon in Dadar East, Mumbai since 2015." path="/about" />
       {/* ═══════ SECTION 1: HERO BANNER ═══════ */}
       <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden"
         style={{
@@ -285,6 +242,7 @@ export default function AboutPage() {
               src={`${BASE}images/hero-portrait.png`}
               alt="Haircraft Salon"
               className="w-full h-full object-cover"
+              loading="lazy"
             />
             {/* Subtle gradient overlay */}
             <div className="absolute inset-0 gradient-overlay opacity-20" />
@@ -326,6 +284,7 @@ export default function AboutPage() {
                     src={`${BASE}images/salon-interior.png`}
                     alt="Inside Haircraft Salon"
                     className="w-full h-full object-cover scale-110"
+                    loading="lazy"
                   />
                 </motion.div>
 

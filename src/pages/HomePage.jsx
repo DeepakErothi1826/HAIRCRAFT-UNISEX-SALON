@@ -5,55 +5,20 @@ import {
   useMotionValue,
   useTransform,
   useScroll,
+  useInView,
   AnimatePresence,
 } from 'framer-motion';
+import { SEO } from '../components/ui';
+import { SERVICES, TESTIMONIALS, STATS, VALUES, SITE, BASE } from '../utils/constants';
+import { useCountUp } from '../hooks/useCountUp';
 
-/* ------------------------------------------------------------------ */
-/*  DATA                                                               */
-/* ------------------------------------------------------------------ */
+const services = SERVICES.map((s) => ({
+  title: s.title,
+  img: `${BASE}images/${s.img}`,
+  subtitle: s.tagline,
+}));
 
-const BASE = import.meta.env.BASE_URL;
-
-const services = [
-  {
-    title: 'Hairdresser services',
-    img: `${BASE}images/service-hair.png`,
-    subtitle: 'Balayage, Highlights, Expert Cuts',
-  },
-  {
-    title: 'Grooming',
-    img: `${BASE}images/service-grooming.png`,
-    subtitle: 'Eyebrow Shaping, Threading, Shaves',
-  },
-  {
-    title: 'Facial treatments',
-    img: `${BASE}images/service-facial.png`,
-    subtitle: 'Premium Facials, Acne, Skin Care',
-  },
-  {
-    title: 'Spa & Wellness',
-    img: `${BASE}images/service-spa.png`,
-    subtitle: 'Waxing, Manicure, Pedicure, Bridal',
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "The best salon experience I've ever had. The balayage was absolutely stunning and the staff made me feel like royalty.",
-    name: 'PRIYA SHARMA',
-  },
-  {
-    quote:
-      'Incredible attention to detail. My haircut was exactly what I envisioned. The scalp massage was heavenly!',
-    name: 'AMIT FERNANDES',
-  },
-  {
-    quote:
-      'My bridal preparation was perfect. The team at Haircraft understood exactly what I wanted. Highly recommend!',
-    name: 'ANANYA DESAI',
-  },
-];
+const testimonials = TESTIMONIALS;
 
 /* ------------------------------------------------------------------ */
 /*  REUSABLE: Rotating Circular Text Badge                             */
@@ -227,6 +192,7 @@ function HeroSection() {
                     src={`${BASE}images/hero-portrait.png`}
                     alt="Haircraft Salon stylist at work"
                     className="w-full h-full object-cover"
+                    fetchpriority="high"
                   />
                 </div>
               </motion.div>
@@ -304,12 +270,11 @@ function ServicesSection() {
                   aspectRatio: '3/4',
                 }}
               >
-                <motion.img
+                <img
                   src={service.img}
                   alt={service.title}
-                  className="w-full h-full object-cover"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
                 />
               </div>
 
@@ -339,7 +304,120 @@ function ServicesSection() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  SECTION 3 — STUDIO / ABOUT PREVIEW                                 */
+/*  SECTION 3 — THE NUMBERS                                            */
+/* ------------------------------------------------------------------ */
+
+/* StatCounter helper                                                         */
+
+function StatCounter({ value, suffix = '', label }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const count = useCountUp(value, 2200, isInView);
+  const isFloat = String(value).includes('.');
+
+  return (
+    <motion.div
+      ref={ref}
+      className="text-center"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+    >
+      <span className="block font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-espresso leading-none">
+        {isFloat ? count.toFixed(1) : count}{suffix}
+      </span>
+      <span className="block mt-3 font-sans text-xs md:text-sm tracking-[0.15em] uppercase text-espresso/50">
+        {label}
+      </span>
+    </motion.div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  SECTION 4 — VALUES                                                 */
+/* ------------------------------------------------------------------ */
+
+const ScissorsIcon = () => (
+  <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="36" r="5" stroke="#1C1A17" strokeWidth="1.5" />
+    <circle cx="12" cy="12" r="5" stroke="#1C1A17" strokeWidth="1.5" />
+    <line x1="16" y1="14" x2="42" y2="34" stroke="#1C1A17" strokeWidth="1.5" strokeLinecap="round" />
+    <line x1="16" y1="34" x2="42" y2="14" stroke="#1C1A17" strokeWidth="1.5" strokeLinecap="round" />
+  </svg>
+);
+
+const HeartIcon = () => (
+  <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M24 40S6 28 6 18C6 12.477 10.477 8 16 8C19.527 8 22.594 10.012 24 12.916C25.406 10.012 28.473 8 32 8C37.523 8 42 12.477 42 18C42 28 24 40 24 40Z" stroke="#1C1A17" strokeWidth="1.5" strokeLinejoin="round" />
+  </svg>
+);
+
+const SparkleIcon = () => (
+  <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M24 4L27.5 18.5H42L30 28L34 44L24 34L14 44L18 28L6 18.5H20.5L24 4Z" stroke="#1C1A17" strokeWidth="1.5" strokeLinejoin="round" />
+  </svg>
+);
+
+const valueIcons = {
+  'Expert Craftsmanship': <ScissorsIcon />,
+  'Personal Touch': <HeartIcon />,
+  'Premium Quality': <SparkleIcon />,
+};
+
+const valueItems = VALUES.map((v) => ({ ...v, icon: valueIcons[v.title] }));
+
+function ValuesSection() {
+  return (
+    <section className="section-padding relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #F5EDE3 0%, #FDFBF7 100%)' }}>
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="font-sans text-xs tracking-[0.2em] uppercase text-rose-dark mb-4">
+            Why Choose Us
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-espresso">
+            Our Core Values
+          </h2>
+          <div className="mt-4 mx-auto w-20 h-[2px] bg-rose" />
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {valueItems.map((item, i) => (
+            <motion.div
+              key={item.title}
+              className="bg-nude/30 rounded-2xl p-8 md:p-10 text-center group cursor-default"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.7, delay: i * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+              whileHover={{ y: -8 }}
+            >
+              <div className="flex justify-center mb-6 opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                {item.icon}
+              </div>
+              <h3 className="font-serif text-xl md:text-2xl font-semibold text-espresso mb-4">
+                {item.title}
+              </h3>
+              <p className="font-sans text-espresso/60 leading-relaxed text-sm md:text-base">
+                {item.description}
+              </p>
+              <div className="mt-6 mx-auto w-10 h-[2px] bg-rose/40 rounded-full group-hover:w-16 transition-all duration-500" />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  SECTION 5 — STUDIO / ABOUT PREVIEW                                 */
 /* ------------------------------------------------------------------ */
 
 function StudioSection() {
@@ -376,6 +454,7 @@ function StudioSection() {
                 alt="Haircraft salon interior"
                 className="w-full h-full object-cover"
                 style={{ y: parallaxY }}
+                loading="lazy"
               />
 
               {/* gradient overlay for video play */}
@@ -499,7 +578,56 @@ function StudioSection() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  SECTION 4 — TESTIMONIALS                                           */
+/*  SECTION 6 — THE NUMBERS                                            */
+/* ------------------------------------------------------------------ */
+
+function NumbersSection() {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] },
+    },
+  };
+
+  return (
+    <section className="section-padding relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #FDFBF7 0%, #F5EDE3 100%)' }}>
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          className="text-center mb-16"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+        >
+          <p className="font-sans text-xs tracking-[0.2em] uppercase text-rose-dark mb-4">
+            The Numbers
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-espresso">
+            Trusted by Thousands
+          </h2>
+          <div className="mt-4 mx-auto w-20 h-[2px] bg-rose" />
+        </motion.div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
+          {STATS.map((stat) => (
+            <StatCounter
+              key={stat.label}
+              value={stat.value}
+              suffix={stat.suffix}
+              label={stat.label}
+            />
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  SECTION 7 — TESTIMONIALS                                           */
 /* ------------------------------------------------------------------ */
 
 function TestimonialsSection() {
@@ -578,7 +706,86 @@ function TestimonialsSection() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  SECTION 5 — MARQUEE STRIP                                          */
+/*  SECTION 8 — FINAL CTA BANNER                                      */
+/* ------------------------------------------------------------------ */
+
+function FinalCTASection() {
+  return (
+    <section className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #E6D5C3 0%, #D2B49A 100%)' }}>
+      <div className="section-padding">
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.12 } },
+            }}
+          >
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+              }}
+              className="font-sans text-sm tracking-[0.2em] uppercase text-espresso/50 mb-6"
+            >
+              Let&rsquo;s Get Started
+            </motion.p>
+
+            <motion.h2
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.1 } },
+              }}
+              className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-espresso leading-tight mb-8"
+            >
+              Ready to Transform
+              <br />
+              Your Look?
+            </motion.h2>
+
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 } },
+              }}
+              className="font-sans text-base md:text-lg text-espresso/70 max-w-xl mx-auto mb-10 leading-relaxed"
+            >
+              Book your appointment today and experience the artistry of Haircraft.
+              Your journey to confidence starts here.
+            </motion.p>
+
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.3 } },
+              }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
+              <Link to="/contact" className="pill-btn pill-btn-primary">
+                Book Appointment
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+              <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} className="pill-btn pill-btn-outline">
+                Call {SITE.phone}
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-canvas/10 pointer-events-none" />
+        <div className="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-canvas/8 pointer-events-none" />
+        <div className="absolute top-1/3 left-1/2 w-24 h-24 rounded-full bg-canvas/5 pointer-events-none" />
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  SECTION 9 — MARQUEE STRIP                                          */
 /* ------------------------------------------------------------------ */
 
 const marqueeText =
@@ -614,10 +821,19 @@ export default function HomePage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
     >
+      <SEO path="/" />
       <HeroSection />
       <ServicesSection />
+
+      <ValuesSection />
       <StudioSection />
+      <NumbersSection />
+
       <TestimonialsSection />
+
+
+
+      <FinalCTASection />
       <MarqueeStrip />
     </motion.div>
   );

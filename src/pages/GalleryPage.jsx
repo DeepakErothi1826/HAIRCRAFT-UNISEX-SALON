@@ -1,117 +1,15 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/ui';
+import { BASE, GALLERY_FILTERS, GALLERY_ITEMS } from '../utils/constants';
 
-/* ─── Gallery Data ─── */
-const BASE = import.meta.env.BASE_URL;
+const galleryItems = GALLERY_ITEMS.map((item) => ({
+  ...item,
+  src: `${BASE}images/${item.img}`,
+}));
 
-const galleryItems = [
-  {
-    id: 1,
-    src: `${BASE}images/hero-portrait.png`,
-    category: 'hair',
-    title: 'Balayage Perfection',
-    span: 'col-span-1 row-span-2',
-    arch: true,
-  },
-  {
-    id: 2,
-    src: `${BASE}images/service-hair.png`,
-    category: 'hair',
-    title: 'Golden Highlights',
-    span: 'col-span-1 row-span-1',
-    arch: false,
-  },
-  {
-    id: 3,
-    src: `${BASE}images/service-grooming.png`,
-    category: 'grooming',
-    title: 'Brow Sculpting',
-    span: 'col-span-1 row-span-1',
-    arch: false,
-  },
-  {
-    id: 4,
-    src: `${BASE}images/service-facial.png`,
-    category: 'skin',
-    title: 'Glow Facial',
-    span: 'col-span-1 row-span-2',
-    arch: true,
-  },
-  {
-    id: 5,
-    src: `${BASE}images/service-spa.png`,
-    category: 'bridal',
-    title: 'Bridal Prep',
-    span: 'col-span-1 row-span-1',
-    arch: false,
-  },
-  {
-    id: 6,
-    src: `${BASE}images/salon-interior.png`,
-    category: 'hair',
-    title: 'Studio Vibes',
-    span: 'col-span-2 row-span-1',
-    arch: false,
-  },
-  {
-    id: 7,
-    src: `${BASE}images/hero-portrait.png`,
-    category: 'bridal',
-    title: 'Bridal Glamour',
-    span: 'col-span-1 row-span-1',
-    arch: false,
-  },
-  {
-    id: 8,
-    src: `${BASE}images/service-hair.png`,
-    category: 'hair',
-    title: 'Layered Cut',
-    span: 'col-span-1 row-span-1',
-    arch: false,
-  },
-  {
-    id: 9,
-    src: `${BASE}images/service-facial.png`,
-    category: 'skin',
-    title: 'Acne Treatment',
-    span: 'col-span-1 row-span-1',
-    arch: false,
-  },
-  {
-    id: 10,
-    src: `${BASE}images/service-grooming.png`,
-    category: 'grooming',
-    title: 'Clean Shave',
-    span: 'col-span-1 row-span-2',
-    arch: true,
-  },
-  {
-    id: 11,
-    src: `${BASE}images/service-spa.png`,
-    category: 'bridal',
-    title: 'Nail Art',
-    span: 'col-span-1 row-span-1',
-    arch: false,
-  },
-  {
-    id: 12,
-    src: `${BASE}images/salon-interior.png`,
-    category: 'hair',
-    title: 'Color Magic',
-    span: 'col-span-1 row-span-1',
-    arch: false,
-  },
-];
-
-/* ─── Filter Tabs ─── */
-const filters = [
-  { key: 'all', label: 'All' },
-  { key: 'hair', label: 'Hair' },
-  { key: 'grooming', label: 'Grooming' },
-  { key: 'skin', label: 'Skin' },
-  { key: 'bridal', label: 'Bridal' },
-];
+const filters = GALLERY_FILTERS;
 
 /* ─── Gallery Item Component ─── */
 function GalleryItem({ item }) {
@@ -141,6 +39,7 @@ function GalleryItem({ item }) {
         className="w-full h-full object-cover absolute inset-0"
         whileHover={{ scale: 1.03 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+        loading="lazy"
       />
 
       {/* Gradient overlay – always present at bottom, intensifies on hover */}
@@ -203,6 +102,7 @@ export default function GalleryPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
     >
+      <SEO title="Gallery" description="Browse our portfolio of transformations — balayage, haircuts, bridal looks, facials and more at Haircraft Unisex Salon." path="/gallery" />
       {/* ═══════ SECTION 1: GALLERY HERO ═══════ */}
       <section className="section-padding bg-canvas relative overflow-hidden">
         {/* Subtle decorative shapes */}

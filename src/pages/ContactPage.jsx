@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { SEO } from '../components/ui';
+import { CONTACT_SERVICES, WEEKDAYS, FAQS } from '../utils/constants';
 
 /* ─── animation variants ─── */
 const pageTransition = {
@@ -24,47 +26,9 @@ const staggerChild = {
 };
 
 /* ─── data ─── */
-const services = [
-  'Hair Design',
-  'Grooming',
-  'Skin & Facials',
-  'Spa & Wellness',
-  'Bridal Prep',
-  'Other',
-];
-
-const weekDays = [
-  { label: 'Mon', hours: '10 AM – 8 PM', idx: 1 },
-  { label: 'Tue', hours: '10 AM – 8 PM', idx: 2 },
-  { label: 'Wed', hours: '10 AM – 8 PM', idx: 3 },
-  { label: 'Thu', hours: '10 AM – 8 PM', idx: 4 },
-  { label: 'Fri', hours: '10 AM – 8 PM', idx: 5 },
-  { label: 'Sat', hours: '10 AM – 8 PM', idx: 6 },
-  { label: 'Sun', hours: 'By Appt', idx: 0 },
-];
-
-const faqs = [
-  {
-    q: 'Do I need an appointment?',
-    a: 'Yes, we recommend booking in advance to ensure availability. Walk-ins are welcome but subject to availability.',
-  },
-  {
-    q: 'What are your most popular services?',
-    a: 'Our balayage and global hair colour services are extremely popular, along with our premium facial treatments and bridal preparation packages.',
-  },
-  {
-    q: 'Do you offer bridal packages?',
-    a: 'Absolutely! We offer comprehensive bridal preparation packages including hair styling, makeup, skin treatments, and nail care. Contact us for custom packages.',
-  },
-  {
-    q: 'What products do you use?',
-    a: 'We exclusively use premium, internationally acclaimed brands to ensure the best results for your hair and skin.',
-  },
-  {
-    q: 'Is parking available?',
-    a: 'Yes, there is convenient parking available near our salon in Dadar East, opposite Gold Cinema.',
-  },
-];
+const services = CONTACT_SERVICES;
+const weekDays = WEEKDAYS;
+const faqs = FAQS;
 
 /* ─── inline SVG icons ─── */
 const LocationIcon = () => (
@@ -164,6 +128,7 @@ export default function ContactPage() {
       exit={pageTransition.exit}
       transition={pageTransition.transition}
     >
+      <SEO title="Contact" description="Get in touch with Haircraft Unisex Salon. Book an appointment, call us, or visit our studio in Dadar East, Mumbai." path="/contact" />
       {/* ── SECTION 1 : HERO ── */}
       <section className="section-padding flex flex-col items-center justify-center text-center pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-24">
         <motion.h1

@@ -1,14 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { NAV_LINKS, SITE } from '../utils/constants';
 
-const navLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'Services', path: '/services' },
-  { name: 'About', path: '/about' },
-  { name: 'Gallery', path: '/gallery' },
-  { name: 'Contact', path: '/contact' },
-];
+const navLinks = NAV_LINKS;
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -93,7 +88,7 @@ function Navbar() {
               +91 98765 43210
             </a>
             <span className="font-sans text-xs text-rose-dark mt-0.5 tracking-wide">
-              Dadar East, Mumbai
+                  {SITE.address.split(',')[1].trim()}, Mumbai
             </span>
           </div>
 
@@ -185,7 +180,7 @@ function Navbar() {
                   +91 98765 43210
                 </a>
                 <span className="font-sans text-xs text-rose-dark mt-1 block tracking-wide">
-                  Dadar East, Mumbai
+              {SITE.address.split(',')[1].trim()}, Mumbai
                 </span>
               </div>
             </motion.div>

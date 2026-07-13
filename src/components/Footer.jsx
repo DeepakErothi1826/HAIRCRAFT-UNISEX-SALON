@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { SITE } from '../utils/constants';
 
 /* ── Reusable fade-up variant ── */
 const fadeUp = {
@@ -100,16 +101,16 @@ function Footer() {
               </span>
             </Link>
             <p className="font-sans text-sm text-canvas/70 leading-relaxed max-w-xs">
-              A premium unisex salon in Dadar East, Mumbai — where artistry meets care.
+              A premium unisex salon in {SITE.address.split(',')[1].trim()} — where artistry meets care.
               Elevating everyday grooming into an experience worth savouring.
             </p>
 
             {/* Social icons */}
             <div className="flex items-center gap-4 mt-6">
               {[
-                { Icon: InstagramIcon, href: 'https://instagram.com', label: 'Instagram' },
-                { Icon: FacebookIcon, href: 'https://facebook.com', label: 'Facebook' },
-                { Icon: YouTubeIcon, href: 'https://youtube.com', label: 'YouTube' },
+                { Icon: InstagramIcon, href: SITE.social.instagram, label: 'Instagram' },
+                { Icon: FacebookIcon, href: SITE.social.facebook, label: 'Facebook' },
+                { Icon: YouTubeIcon, href: SITE.social.youtube, label: 'YouTube' },
               ].map(({ Icon, href, label }) => (
                 <a
                   key={label}
@@ -186,28 +187,28 @@ function Footer() {
             </h4>
             <ul className="flex flex-col gap-4 font-sans text-sm text-canvas/70">
               <li className="leading-relaxed">
-                Opposite Gold Cinema,
+                {SITE.address.split(',')[0].trim()}
                 <br />
-                Dadar East, Mumbai 400014
+                {SITE.address.split(',').slice(1).join(',').trim()}
               </li>
               <li>
                 <a
-                  href="tel:+919876543210"
+                  href={`tel:${SITE.phone.replace(/\s/g, '')}`}
                   className="hover:text-rose transition-colors duration-300"
                 >
-                  +91 98765 43210
+                  {SITE.phone}
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:hello@haircraft.in"
+                  href={`mailto:${SITE.email}`}
                   className="hover:text-rose transition-colors duration-300"
                 >
-                  hello@haircraft.in
+                  {SITE.email}
                 </a>
               </li>
               <li className="text-canvas/50 text-xs tracking-wide">
-                Mon – Sat: 10 AM – 8 PM
+                {SITE.hours.weekday}
               </li>
             </ul>
           </motion.div>
@@ -225,7 +226,7 @@ function Footer() {
       >
         <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
           <span className="font-sans text-xs text-canvas/50">
-            &copy; 2024 Haircraft Unisex Salon. All rights reserved.
+            &copy; {new Date().getFullYear()} Haircraft Unisex Salon. All rights reserved.
           </span>
           <span className="font-sans text-xs text-canvas/40">
             Crafted with passion in Mumbai

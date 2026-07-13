@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
-const BASE = import.meta.env.BASE_URL;
+import { SEO, FloatingDot } from '../components/ui';
+import { BASE, PRICING } from '../utils/constants';
 
 const services = [
   {
@@ -42,18 +42,7 @@ const services = [
   },
 ];
 
-const pricing = [
-  { name: 'Haircut & Blow-Dry', price: '₹1,200', tag: 'Starts at' },
-  { name: 'Global Hair Colour', price: '₹4,500', tag: 'Starts at' },
-  { name: 'Balayage / Highlights', price: '₹5,500', tag: 'Starts at' },
-  { name: 'Beard Trim & Shape', price: '₹400', tag: 'Flat' },
-  { name: 'Classic Facial', price: '₹1,200', tag: 'Starts at' },
-  { name: 'Gold Facial', price: '₹2,500', tag: 'Flat' },
-  { name: 'Manicure', price: '₹800', tag: 'Starts at' },
-  { name: 'Pedicure', price: '₹1,000', tag: 'Starts at' },
-  { name: 'Full-Body Waxing', price: '₹1,800', tag: 'Starts at' },
-  { name: 'Bridal Package', price: '₹15,000', tag: 'Starts at' },
-];
+const pricing = PRICING;
 
 const stagger = {
   hidden: {},
@@ -77,21 +66,6 @@ const maskReveal = {
   },
 };
 
-function FloatingDot({ size = 8, color = 'bg-rose', top, left, right, bottom, delay = 0, duration = 5 }) {
-  return (
-    <motion.div
-      className={`absolute rounded-full ${color} pointer-events-none`}
-      style={{ width: size, height: size, top, left, right, bottom }}
-      animate={{
-        y: [0, -18, -6, -22, 0],
-        x: [0, 8, -4, 10, 0],
-        opacity: [0.4, 0.7, 0.5, 0.8, 0.4],
-      }}
-      transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }}
-    />
-  );
-}
-
 export default function ServicesPage() {
   return (
     <motion.div
@@ -100,6 +74,7 @@ export default function ServicesPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
     >
+      <SEO title="Services" description="Explore our premium range of services: hair design, grooming, facial treatments, spa & wellness in Dadar East, Mumbai." path="/services" />
       {/* ═══════ HERO ═══════ */}
       <section
         className="relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden"
@@ -174,6 +149,7 @@ export default function ServicesPage() {
                       src={service.img}
                       alt={service.title}
                       className="w-full h-[400px] md:h-[500px] object-cover"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 gradient-overlay opacity-10" />
                   </div>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://haircraft.in/HAIRCRAFT-UNISEX-SALON/sitemap.xml
