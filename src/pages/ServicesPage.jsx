@@ -74,7 +74,7 @@ export default function ServicesPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
     >
-      <SEO title="Services" description="Explore our premium range of services: hair design, grooming, facial treatments, spa & wellness in Dadar East, Mumbai." path="/services" />
+      <SEO title="Services" description="Explore our premium range of hair services: women's haircuts, hair coloring, balayage, keratin treatment, hair spa, and styling in Khar West, Mumbai." path="/services" />
       {/* ═══════ HERO ═══════ */}
       <section
         className="relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden"
@@ -112,7 +112,7 @@ export default function ServicesPage() {
               variants={fadeUp}
               className="font-sans text-lg md:text-xl text-espresso/60 leading-relaxed max-w-xl"
             >
-              From precision cuts to indulgent spa treatments — every service at Haircraft is crafted with care.
+              From precision cuts to indulgent spa treatments — every service at HAIR PRAY LOVE is crafted with care and expertise.
             </motion.p>
           </motion.div>
         </div>
@@ -347,8 +347,8 @@ export default function ServicesPage() {
                     <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </Link>
-                <a href="tel:+919876543210" className="pill-btn pill-btn-outline">
-                  Call +91 98765 43210
+                <a href="tel:+918850159641" className="pill-btn pill-btn-outline">
+                  Call +91 88501 59641
                 </a>
               </motion.div>
             </motion.div>

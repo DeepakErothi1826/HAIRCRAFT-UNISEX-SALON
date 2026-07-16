@@ -1,17 +1,17 @@
 import { Helmet } from 'react-helmet-async';
 
-const BASE_URL = 'https://haircraft.in';
+const BASE_URL = 'https://hairpraylove.com';
 
 export default function SEO({
   title,
-  description = 'Premium unisex salon in Dadar East, Mumbai — where artistry meets care. Balayage, grooming, facials, spa, and bridal packages since 2015.',
+  description = 'HAIR PRAY LOVE is a premium boutique hair salon in Khar West, Mumbai, offering expert haircuts, hair coloring, hair treatments, keratin, smoothening, hair spa, and personalized styling with over 16 years of professional experience.',
   path = '',
   ogImage = '/images/hero-portrait.png',
   ogType = 'website',
 }) {
   const fullTitle = title
-    ? `${title} | Haircraft Unisex Salon`
-    : 'Haircraft Unisex Salon | Premium Hair & Beauty | Dadar East, Mumbai';
+    ? `${title} | HAIR PRAY LOVE`
+    : 'HAIR PRAY LOVE | Premium Hair Salon in Khar West, Mumbai';
 
   const canonicalUrl = `${BASE_URL}${path}`;
 
@@ -26,7 +26,7 @@ export default function SEO({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={`${BASE_URL}${ogImage}`} />
-      <meta property="og:site_name" content="Haircraft Unisex Salon" />
+      <meta property="og:site_name" content="HAIR PRAY LOVE" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />

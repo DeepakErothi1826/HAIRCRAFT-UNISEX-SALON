@@ -128,7 +128,7 @@ export default function ContactPage() {
       exit={pageTransition.exit}
       transition={pageTransition.transition}
     >
-      <SEO title="Contact" description="Get in touch with Haircraft Unisex Salon. Book an appointment, call us, or visit our studio in Dadar East, Mumbai." path="/contact" />
+      <SEO title="Contact" description="Get in touch with HAIR PRAY LOVE. Book an appointment, call us, or visit our salon in Khar West, Mumbai." path="/contact" />
       {/* ── SECTION 1 : HERO ── */}
       <section className="section-padding flex flex-col items-center justify-center text-center pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-24">
         <motion.h1
@@ -275,8 +275,8 @@ export default function ContactPage() {
                 </span>
                 <div>
                   <p className="font-sans text-espresso leading-relaxed">
-                    Opposite Gold Cinema,<br />
-                    Dadar East, Mumbai&nbsp;–&nbsp;400014
+                    Shop No. 2, Sheetal Vaibhav Building,<br />
+                    18th Road, Khar West, Mumbai&nbsp;–&nbsp;400052
                   </p>
                 </div>
               </motion.div>
@@ -287,8 +287,8 @@ export default function ContactPage() {
                   <PhoneIcon />
                 </span>
                 <div>
-                  <a href="tel:+919876543210" className="font-sans text-espresso hover:text-rose transition-colors">
-                    +91 98765 43210
+                  <a href="tel:+918850159641" className="font-sans text-espresso hover:text-rose transition-colors">
+                    +91 88501 59641
                   </a>
                 </div>
               </motion.div>
@@ -299,8 +299,8 @@ export default function ContactPage() {
                   <EmailIcon />
                 </span>
                 <div>
-                  <a href="mailto:hello@haircraft.in" className="font-sans text-espresso hover:text-rose transition-colors">
-                    hello@haircraft.in
+                  <a href="mailto:hello@hairpraylove.com" className="font-sans text-espresso hover:text-rose transition-colors">
+                    hello@hairpraylove.com
                   </a>
                 </div>
               </motion.div>
@@ -311,8 +311,7 @@ export default function ContactPage() {
                   <ClockIcon />
                 </span>
                 <div className="font-sans text-espresso leading-relaxed">
-                  <p>Mon&nbsp;–&nbsp;Sat: 10:00&nbsp;AM&nbsp;–&nbsp;8:00&nbsp;PM</p>
-                  <p className="text-espresso/60">Sunday: By Appointment Only</p>
+                  <p>Daily: 10:00 AM – 8:00 PM</p>
                 </div>
               </motion.div>
             </div>
@@ -320,8 +319,8 @@ export default function ContactPage() {
             {/* Map */}
             <motion.div variants={staggerChild} className="mt-10 rounded-2xl overflow-hidden">
               <iframe
-                title="Haircraft Salon Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.5!2d72.845!3d19.018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDAxJzA0LjgiTiA3MsKwNTAnNDIuMCJF!5e0!3m2!1sen!2sin!4v1"
+                title="HAIR PRAY LOVE Salon Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.5!2d72.845!3d19.018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDAxJzA0LjgiTiA3MsKwNTAnNDIuMCJF!5e0!3m2!1sen!2sin!4v1"
                 className="w-full h-64 md:h-80 border-0"
                 allowFullScreen
                 loading="lazy"
@@ -334,12 +333,12 @@ export default function ContactPage() {
               variants={staggerChild}
               className="mt-6 flex flex-wrap gap-3"
             >
-              <a href="tel:+919876543210" className="pill-btn pill-btn-primary">
+              <a href="tel:+918850159641" className="pill-btn pill-btn-primary">
                 <PhoneIcon />
                 Call Now
               </a>
               <a
-                href="https://www.google.com/maps/dir//Dadar+East,+Mumbai,+Maharashtra+400014"
+                href="https://www.google.com/maps/dir//Khar+West,+Mumbai,+Maharashtra+400052"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="pill-btn pill-btn-outline"
@@ -347,7 +346,7 @@ export default function ContactPage() {
                 Get Directions
               </a>
               <a
-                href="https://wa.me/919876543210?text=Hi%20Haircraft!%20I%E2%80%99d%20like%20to%20book%20an%20appointment."
+                href="https://wa.me/918850159641?text=Hi%20HAIR%20PRAY%20LOVE!%20I%E2%80%99d%20like%20to%20book%20an%20appointment."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="pill-btn pill-btn-outline"

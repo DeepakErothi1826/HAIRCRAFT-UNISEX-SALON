@@ -1,25 +1,25 @@
 export const BASE = import.meta.env.BASE_URL;
 
 export const SITE = {
-  name: 'Haircraft Unisex Salon',
-  tagline: 'Premium Hair & Beauty Studio',
+  name: 'HAIR PRAY LOVE',
+  tagline: 'Premium Hair Salon',
   description:
-    'Premium unisex salon in Dadar East, Mumbai — where artistry meets care. Balayage, grooming, facials, spa, and bridal packages since 2015.',
-  url: 'https://haircraft.in',
-  phone: '+91 98765 43210',
-  email: 'hello@haircraft.in',
-  address: 'Opposite Gold Cinema, Dadar East, Mumbai 400014',
-  since: 2015,
-  rating: 4.9,
-  reviews: 125,
+    'HAIR PRAY LOVE is a premium boutique hair salon in Khar West, Mumbai, offering expert haircuts, hair coloring, hair treatments, keratin, smoothening, hair spa, and personalized styling with over 16 years of professional experience.',
+  url: 'https://hairpraylove.com',
+  phone: '+91 88501 59641',
+  email: 'hello@hairpraylove.com',
+  address: 'Shop No. 2, Sheetal Vaibhav Building, 18th Road, Khar West, Mumbai, Maharashtra 400052',
+  since: 2009,
+  rating: 5.0,
+  reviews: 321,
   hours: {
     weekday: '10:00 AM – 8:00 PM',
-    weekend: 'By Appointment Only',
+    weekend: '10:00 AM – 8:00 PM',
   },
   social: {
-    instagram: 'https://instagram.com/haircraft',
-    facebook: 'https://facebook.com/haircraft',
-    youtube: 'https://youtube.com/@haircraft',
+    instagram: 'https://instagram.com/hairpraylove',
+    facebook: 'https://facebook.com/hairpraylove',
+    youtube: 'https://youtube.com/@hairpraylove',
   },
 };
 
@@ -34,106 +34,106 @@ export const NAV_LINKS = [
 export const SERVICES = [
   {
     id: 1,
-    title: 'Hairdresser Services',
-    slug: 'hair',
+    title: 'Women\'s Haircuts',
+    slug: 'haircut',
     img: 'service-hair.png',
-    tagline: 'Balayage, Highlights, Expert Cuts',
+    tagline: 'Precision Cuts & Styling',
     price: '₹1,500+',
     description:
-      'From precision cuts to transformative colour, our stylists bring your vision to life.',
+      'From precision cuts to transformative styles, our expert stylists bring your vision to life with meticulous attention to detail.',
     features: [
       'Precision haircuts & styling',
-      'Balayage & global colour',
-      'Highlights & baby lights',
-      'Keratin & deep conditioning',
+      'Layered & textured cuts',
+      'Bang & fringe trimming',
+      'Seasonal hair consultations',
     ],
   },
   {
     id: 2,
-    title: 'Grooming',
-    slug: 'grooming',
+    title: 'Hair Coloring',
+    slug: 'coloring',
     img: 'service-grooming.png',
-    tagline: 'Eyebrow Shaping, Threading, Shaves',
-    price: '₹500+',
+    tagline: 'Global Color, Balayage & Highlights',
+    price: '₹3,500+',
     description:
-      'Clean lines, sharp edges, and a flawless finish for both men and women.',
+      'Transform your look with our premium hair coloring services. From natural global color to stunning balayage, we customize every look to complement your style.',
     features: [
-      'Eyebrow shaping & threading',
-      'Beard trimming & shaping',
-      'Traditional & straight-razor shaves',
-      'Face waxing',
+      'Global hair color',
+      'Balayage & ombre',
+      'Hair highlights & baby lights',
+      'Color correction',
     ],
   },
   {
     id: 3,
-    title: 'Facial Treatments',
-    slug: 'skin',
+    title: 'Hair Treatments',
+    slug: 'treatments',
     img: 'service-facial.png',
-    tagline: 'Premium Facials, Acne Care, Skin Rejuvenation',
-    price: '₹1,200+',
+    tagline: 'Keratin, Smoothening & Botox',
+    price: '₹4,000+',
     description:
-      'Reveal your natural glow with our premium facial treatments using world-class products.',
+      'Restore, repair, and rejuvenate your hair with our premium treatment services. Using world-class products for visible, lasting results.',
     features: [
-      'Deep-cleansing & hydration facials',
-      'Acne & scar treatments',
-      'Anti-ageing & brightening',
-      'Gold & diamond facials',
+      'Keratin treatment',
+      'Hair smoothening',
+      'Hair botox',
+      'Deep conditioning',
     ],
   },
   {
     id: 4,
-    title: 'Spa & Wellness',
+    title: 'Hair Spa & Styling',
     slug: 'spa',
     img: 'service-spa.png',
-    tagline: 'Waxing, Manicure, Pedicure, Bridal Packages',
+    tagline: 'Scalp Treatments, Blow Dry & Styling',
     price: '₹800+',
     description:
-      'Unwind and indulge in our spa & wellness services. Comprehensive bridal packages available.',
+      'Indulge in our luxurious hair spa and styling services. Comprehensive care from scalp treatments to perfect blow-dry styles.',
     features: [
-      'Full-body waxing',
-      'Manicure & pedicure',
-      'Head & scalp massage',
-      'Complete bridal packages',
+      'Hair spa & scalp treatments',
+      'Blow dry & ironing',
+      'Hair styling for occasions',
+      'Deep conditioning treatments',
     ],
   },
 ];
 
 export const PRICING = [
-  { name: 'Haircut & Blow-Dry', price: '₹1,200', tag: 'Starts at' },
+  { name: 'Women\'s Haircut & Blow-Dry', price: '₹1,500', tag: 'Starts at' },
   { name: 'Global Hair Colour', price: '₹4,500', tag: 'Starts at' },
-  { name: 'Balayage / Highlights', price: '₹5,500', tag: 'Starts at' },
-  { name: 'Beard Trim & Shape', price: '₹400', tag: 'Flat' },
-  { name: 'Classic Facial', price: '₹1,200', tag: 'Starts at' },
-  { name: 'Gold Facial', price: '₹2,500', tag: 'Flat' },
-  { name: 'Manicure', price: '₹800', tag: 'Starts at' },
-  { name: 'Pedicure', price: '₹1,000', tag: 'Starts at' },
-  { name: 'Full-Body Waxing', price: '₹1,800', tag: 'Starts at' },
-  { name: 'Bridal Package', price: '₹15,000', tag: 'Starts at' },
+  { name: 'Balayage / Highlights', price: '₹6,000', tag: 'Starts at' },
+  { name: 'Hair Botox', price: '₹5,000', tag: 'Starts at' },
+  { name: 'Keratin Treatment', price: '₹6,500', tag: 'Starts at' },
+  { name: 'Hair Smoothening', price: '₹5,500', tag: 'Starts at' },
+  { name: 'Hair Spa', price: '₹1,200', tag: 'Starts at' },
+  { name: 'Blow Dry', price: '₹500', tag: 'Starts at' },
+  { name: 'Deep Conditioning', price: '₹800', tag: 'Starts at' },
+  { name: 'Hair Consultation', price: '₹300', tag: 'Complimentary' },
 ];
 
 export const TESTIMONIALS = [
   {
     quote:
-      "The best salon experience I've ever had. The balayage was absolutely stunning and the staff made me feel like royalty.",
-    name: 'PRIYA SHARMA',
+      "Got a haircut here and absolutely loved the service!",
+    name: 'Fatema Singaporewala',
   },
   {
     quote:
-      'Incredible attention to detail. My haircut was exactly what I envisioned. The scalp massage was heavenly!',
-    name: 'AMIT FERNANDES',
+      "If you need a haircut or hair color, it's the go-to place!",
+    name: 'Anushree Gupta Shah',
   },
   {
     quote:
-      'My bridal preparation was perfect. The team at Haircraft understood exactly what I wanted. Highly recommend!',
-    name: 'ANANYA DESAI',
+      "The attention to detail and quality of products were top-notch.",
+    name: 'Huda Shaikh',
   },
 ];
 
 export const STATS = [
-  { value: '8', suffix: '+', label: 'Years Experience' },
-  { value: '15000', suffix: '+', label: 'Happy Clients' },
-  { value: '4.9', suffix: '', label: 'Google Rating' },
-  { value: '125', suffix: '+', label: '5-Star Reviews' },
+  { value: '16', suffix: '+', label: 'Years Experience' },
+  { value: '321', suffix: '+', label: 'Happy Clients' },
+  { value: '5.0', suffix: '', label: 'Google Rating' },
+  { value: '321', suffix: '+', label: '5-Star Reviews' },
 ];
 
 export const VALUES = [
@@ -141,19 +141,19 @@ export const VALUES = [
     title: 'Expert Craftsmanship',
     icon: 'scissors',
     description:
-      'Every stylist at Haircraft undergoes rigorous training. We stay ahead of global trends to bring you the finest techniques.',
+      'With over 16 years of experience, our skilled stylists stay ahead of global trends to bring you the finest hair care techniques.',
   },
   {
     title: 'Personal Touch',
     icon: 'heart',
     description:
-      'We listen, we understand, we create. Your vision is our mission. Every visit is a bespoke experience.',
+      'We listen, we understand, we create. Your vision is our mission. Every visit is a bespoke experience tailored to you.',
   },
   {
     title: 'Premium Quality',
     icon: 'sparkle',
     description:
-      'We use only the finest products from world-renowned brands. Your hair deserves nothing but the best.',
+      'We use only the finest premium hair care products. Your hair deserves nothing but the best.',
   },
 ];
 
@@ -167,32 +167,32 @@ export const PROCESS = [
 export const GALLERY_FILTERS = [
   { key: 'all', label: 'All' },
   { key: 'hair', label: 'Hair' },
-  { key: 'grooming', label: 'Grooming' },
-  { key: 'skin', label: 'Skin' },
-  { key: 'bridal', label: 'Bridal' },
+  { key: 'coloring', label: 'Coloring' },
+  { key: 'treatments', label: 'Treatments' },
+  { key: 'styling', label: 'Styling' },
 ];
 
 export const GALLERY_ITEMS = [
-  { id: 1, img: 'hero-portrait.png', category: 'hair', title: 'Balayage Perfection', span: 'col-span-1 row-span-2', arch: true },
-  { id: 2, img: 'service-hair.png', category: 'hair', title: 'Golden Highlights', span: 'col-span-1 row-span-1', arch: false },
-  { id: 3, img: 'service-grooming.png', category: 'grooming', title: 'Brow Sculpting', span: 'col-span-1 row-span-1', arch: false },
-  { id: 4, img: 'service-facial.png', category: 'skin', title: 'Glow Facial', span: 'col-span-1 row-span-2', arch: true },
-  { id: 5, img: 'service-spa.png', category: 'bridal', title: 'Bridal Prep', span: 'col-span-1 row-span-1', arch: false },
-  { id: 6, img: 'salon-interior.png', category: 'hair', title: 'Studio Vibes', span: 'col-span-2 row-span-1', arch: false },
-  { id: 7, img: 'hero-portrait.png', category: 'bridal', title: 'Bridal Glamour', span: 'col-span-1 row-span-1', arch: false },
+  { id: 1, img: 'hero-portrait.png', category: 'hair', title: 'Precision Cut', span: 'col-span-1 row-span-2', arch: true },
+  { id: 2, img: 'service-hair.png', category: 'hair', title: 'Classic Style', span: 'col-span-1 row-span-1', arch: false },
+  { id: 3, img: 'service-grooming.png', category: 'coloring', title: 'Balayage Beauty', span: 'col-span-1 row-span-1', arch: false },
+  { id: 4, img: 'service-facial.png', category: 'treatments', title: 'Hair Treatment', span: 'col-span-1 row-span-2', arch: true },
+  { id: 5, img: 'service-spa.png', category: 'styling', title: 'Blow Dry Style', span: 'col-span-1 row-span-1', arch: false },
+  { id: 6, img: 'salon-interior.png', category: 'hair', title: 'Salon Vibes', span: 'col-span-2 row-span-1', arch: false },
+  { id: 7, img: 'hero-portrait.png', category: 'coloring', title: 'Color Magic', span: 'col-span-1 row-span-1', arch: false },
   { id: 8, img: 'service-hair.png', category: 'hair', title: 'Layered Cut', span: 'col-span-1 row-span-1', arch: false },
-  { id: 9, img: 'service-facial.png', category: 'skin', title: 'Acne Treatment', span: 'col-span-1 row-span-1', arch: false },
-  { id: 10, img: 'service-grooming.png', category: 'grooming', title: 'Clean Shave', span: 'col-span-1 row-span-2', arch: true },
-  { id: 11, img: 'service-spa.png', category: 'bridal', title: 'Nail Art', span: 'col-span-1 row-span-1', arch: false },
-  { id: 12, img: 'salon-interior.png', category: 'hair', title: 'Color Magic', span: 'col-span-1 row-span-1', arch: false },
+  { id: 9, img: 'service-facial.png', category: 'treatments', title: 'Keratin Treatment', span: 'col-span-1 row-span-1', arch: false },
+  { id: 10, img: 'service-grooming.png', category: 'coloring', title: 'Global Color', span: 'col-span-1 row-span-2', arch: true },
+  { id: 11, img: 'service-spa.png', category: 'styling', title: 'Special Occasion', span: 'col-span-1 row-span-1', arch: false },
+  { id: 12, img: 'salon-interior.png', category: 'hair', title: 'Expert Styling', span: 'col-span-1 row-span-1', arch: false },
 ];
 
 export const FAQS = [
   { q: 'Do I need an appointment?', a: 'Yes, we recommend booking in advance to ensure availability. Walk-ins are welcome but subject to availability.' },
-  { q: 'What are your most popular services?', a: 'Our balayage and global hair colour services are extremely popular, along with our premium facial treatments and bridal preparation packages.' },
-  { q: 'Do you offer bridal packages?', a: 'Absolutely! We offer comprehensive bridal preparation packages including hair styling, makeup, skin treatments, and nail care.' },
-  { q: 'What products do you use?', a: 'We exclusively use premium, internationally acclaimed brands to ensure the best results for your hair and skin.' },
-  { q: 'Is parking available?', a: 'Yes, there is convenient parking available near our salon in Dadar East, opposite Gold Cinema.' },
+  { q: 'What are your most popular services?', a: 'Our balayage and global hair colour services are extremely popular, along with our keratin treatments and precision haircuts.' },
+  { q: 'What products do you use?', a: 'We exclusively use premium, internationally acclaimed hair care brands to ensure the best results for your hair.' },
+  { q: 'Is parking available?', a: 'Yes, there is convenient parking available near our salon in Khar West, Mumbai.' },
+  { q: 'What are your business hours?', a: 'We are open daily from 10:00 AM to 8:00 PM, seven days a week.' },
 ];
 
 export const WEEKDAYS = [
@@ -202,17 +202,17 @@ export const WEEKDAYS = [
   { label: 'Thu', hours: '10 AM – 8 PM', idx: 4 },
   { label: 'Fri', hours: '10 AM – 8 PM', idx: 5 },
   { label: 'Sat', hours: '10 AM – 8 PM', idx: 6 },
-  { label: 'Sun', hours: 'By Appt', idx: 0 },
+  { label: 'Sun', hours: '10 AM – 8 PM', idx: 0 },
 ];
 
 export const CONTACT_SERVICES = [
-  'Hair Design',
-  'Grooming',
-  'Skin & Facials',
-  'Spa & Wellness',
-  'Bridal Prep',
+  'Women\'s Haircuts',
+  'Hair Coloring',
+  'Hair Treatments',
+  'Hair Spa',
+  'Hair Styling',
   'Other',
 ];
 
 export const MARQUEE_TEXT =
-  'HAIR DESIGN \u2022 GROOMING \u2022 FACIALS \u2022 SPA \u2022 WELLNESS \u2022 BRIDAL \u2022 BALAYAGE \u2022 ';
+  'HAIR PRAY LOVE \u2022 WOMEN\'S HAIRCUTS \u2022 HAIR COLORING \u2022 BALAYAGE \u2022 KERATIN \u2022 HAIR SPA \u2022 ';

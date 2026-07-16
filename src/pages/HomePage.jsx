@@ -115,16 +115,16 @@ function HeroSection() {
               variants={childVariants}
               className="text-xs tracking-widest uppercase font-sans text-espresso/60"
             >
-              Premium Hair Studio
+              Premium Hair Studio in Khar West
             </motion.span>
 
             <motion.h1
               variants={childVariants}
               className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-espresso"
             >
-              Beauty studio
+              Premium Hair Salon
               <br />
-              <span className="italic">&ldquo;Haircraft.&rdquo;</span>
+              <span className="italic">&ldquo;HAIR PRAY LOVE&rdquo;</span>
             </motion.h1>
 
             <motion.div variants={childVariants}>
@@ -137,8 +137,7 @@ function HeroSection() {
               variants={childVariants}
               className="max-w-sm text-sm leading-relaxed text-espresso/70 font-sans"
             >
-              Comfort, individual approach to customers and a high level of
-              service.
+              Experience premium hair care with over 16 years of expertise. Every visit is designed to deliver excellence.
             </motion.p>
 
             <motion.div
@@ -151,10 +150,10 @@ function HeroSection() {
                 ))}
               </div>
               <span className="font-serif font-bold text-espresso text-lg">
-                4.9
+                5.0
               </span>
               <span className="text-xs tracking-wide text-espresso/50 font-sans">
-                125+ Reviews
+                321+ Google Reviews
               </span>
             </motion.div>
           </motion.div>
@@ -190,7 +189,7 @@ function HeroSection() {
                 >
                   <img
                     src={`${BASE}images/hero-portrait.png`}
-                    alt="Haircraft Salon stylist at work"
+                    alt="HAIR PRAY LOVE Salon stylist at work"
                     className="w-full h-full object-cover"
                     fetchpriority="high"
                   />
@@ -240,7 +239,7 @@ function ServicesSection() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-espresso">
-            Haircraft Services
+            Our Services
           </h2>
           <div className="mt-4 mx-auto w-20 h-[2px] bg-rose" />
         </motion.div>
@@ -451,7 +450,7 @@ function StudioSection() {
             >
               <motion.img
                 src={`${BASE}images/salon-interior.png`}
-                alt="Haircraft salon interior"
+                alt="HAIR PRAY LOVE salon interior"
                 className="w-full h-full object-cover"
                 style={{ y: parallaxY }}
                 loading="lazy"
@@ -512,7 +511,7 @@ function StudioSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Beauty Studio in Dadar East
+              Premium Hair Salon in Khar West
             </motion.span>
 
             <motion.h2
@@ -522,7 +521,7 @@ function StudioSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <span className="italic">&ldquo;Haircraft&rdquo;</span>
+              <span className="italic">&ldquo;HAIR PRAY LOVE&rdquo;</span>
             </motion.h2>
 
             <motion.div
@@ -533,14 +532,10 @@ function StudioSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <p className="text-sm leading-relaxed text-espresso/70 font-sans">
-                A great gift for your relatives and friends will be our salon
-                gift card, which will allow you to use any services from our
-                range of offers.
+                HAIR PRAY LOVE is a premium boutique hair salon located in Khar West, Mumbai, offering exceptional hair care and personalized styling experiences.
               </p>
               <p className="text-sm leading-relaxed text-espresso/70 font-sans">
-                Everyone is unique, and so should their hairstyle. When creating
-                a cut, our hairdressers take into account a person&apos;s
-                individuality.
+                With over 16 years of professional expertise, our talented stylists specialize in precision haircuts, premium hair coloring, and customized styling.
               </p>
             </motion.div>
 
@@ -562,12 +557,12 @@ function StudioSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Dadar East:{' '}
+              Khar West:{' '}
               <a
-                href="tel:+919876543210"
+                href="tel:+918850159641"
                 className="animated-underline font-medium text-espresso"
               >
-                +91 98765 43210
+                +91 88501 59641
               </a>
             </motion.p>
           </div>
@@ -752,7 +747,7 @@ function FinalCTASection() {
               }}
               className="font-sans text-base md:text-lg text-espresso/70 max-w-xl mx-auto mb-10 leading-relaxed"
             >
-              Book your appointment today and experience the artistry of Haircraft.
+              Book your appointment today and experience the artistry of HAIR PRAY LOVE.
               Your journey to confidence starts here.
             </motion.p>
 
@@ -789,7 +784,7 @@ function FinalCTASection() {
 /* ------------------------------------------------------------------ */
 
 const marqueeText =
-  'HAIR DESIGN \u2022 GROOMING \u2022 FACIALS \u2022 SPA \u2022 WELLNESS \u2022 BRIDAL \u2022 BALAYAGE \u2022 ';
+  'HAIR PRAY LOVE \u2022 WOMEN\'S HAIRCUTS \u2022 HAIR COLORING \u2022 BALAYAGE \u2022 KERATIN \u2022 HAIR SPA \u2022 ';
 
 function MarqueeStrip() {
   return (

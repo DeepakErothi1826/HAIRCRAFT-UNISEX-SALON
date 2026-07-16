@@ -76,7 +76,7 @@ const quickLinks = [
   { name: 'Contact', path: '/contact' },
 ];
 
-const services = ['Hair Design', 'Grooming', 'Skin & Facials', 'Spa & Wellness'];
+const services = ['Women\'s Haircuts', 'Hair Coloring', 'Hair Treatments', 'Hair Spa'];
 
 function Footer() {
   return (
@@ -97,12 +97,11 @@ function Footer() {
           >
             <Link to="/" className="inline-block mb-5">
               <span className="font-serif text-2xl font-bold text-canvas tracking-tight">
-                Haircraft.
+                HAIR PRAY LOVE
               </span>
             </Link>
             <p className="font-sans text-sm text-canvas/70 leading-relaxed max-w-xs">
-              A premium unisex salon in {SITE.address.split(',')[1].trim()} — where artistry meets care.
-              Elevating everyday grooming into an experience worth savouring.
+              A premium boutique hair salon in Khar West, Mumbai — offering expert haircuts, coloring, treatments, and personalized styling.
             </p>
 
             {/* Social icons */}
@@ -226,7 +225,7 @@ function Footer() {
       >
         <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
           <span className="font-sans text-xs text-canvas/50">
-            &copy; {new Date().getFullYear()} Haircraft Unisex Salon. All rights reserved.
+            &copy; {new Date().getFullYear()} HAIR PRAY LOVE. All rights reserved.
           </span>
           <span className="font-sans text-xs text-canvas/40">
             Crafted with passion in Mumbai

@@ -102,7 +102,7 @@ export default function GalleryPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
     >
-      <SEO title="Gallery" description="Browse our portfolio of transformations — balayage, haircuts, bridal looks, facials and more at Haircraft Unisex Salon." path="/gallery" />
+      <SEO title="Gallery" description="Browse our portfolio of transformations — haircuts, balayage, hair coloring, keratin treatments, and styling at HAIR PRAY LOVE salon in Khar West, Mumbai." path="/gallery" />
       {/* ═══════ SECTION 1: GALLERY HERO ═══════ */}
       <section className="section-padding bg-canvas relative overflow-hidden">
         {/* Subtle decorative shapes */}

@@ -107,7 +107,7 @@ const stats = STATS;
 
 /* ─── Rotating Text Badge ─── */
 function RotatingBadge() {
-  const text = ' HAIRCRAFT • PREMIUM SALON • DADAR EAST • ';
+  const text = ' HAIR PRAY LOVE • PREMIUM SALON • KHAR WEST • ';
   const characters = text.split('');
 
   return (
@@ -184,7 +184,7 @@ export default function AboutPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
     >
-      <SEO title="About" description="Learn the story behind Haircraft — a premium unisex salon in Dadar East, Mumbai since 2015." path="/about" />
+      <SEO title="About" description="Learn the story behind HAIR PRAY LOVE — a premium boutique hair salon in Khar West, Mumbai with over 16 years of professional expertise." path="/about" />
       {/* ═══════ SECTION 1: HERO BANNER ═══════ */}
       <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden"
         style={{
@@ -219,7 +219,7 @@ export default function AboutPage() {
             >
               About
               <br />
-              <span className="italic text-rose-dark">Haircraft</span>
+              <span className="italic text-rose-dark">HAIR PRAY LOVE</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -227,7 +227,7 @@ export default function AboutPage() {
               variants={fadeUp}
               className="font-sans text-lg md:text-xl text-espresso/60 leading-relaxed max-w-xl"
             >
-              Where art meets hair. Since 2015, crafting confidence in Dadar East.
+              Where art meets hair. Over 16 years of crafting confidence in Khar West.
             </motion.p>
           </motion.div>
 
@@ -240,7 +240,7 @@ export default function AboutPage() {
           >
             <img
               src={`${BASE}images/hero-portrait.png`}
-              alt="Haircraft Salon"
+              alt="HAIR PRAY LOVE Salon"
               className="w-full h-full object-cover"
               loading="lazy"
             />
@@ -282,7 +282,7 @@ export default function AboutPage() {
                 >
                   <img
                     src={`${BASE}images/salon-interior.png`}
-                    alt="Inside Haircraft Salon"
+                    alt="Inside HAIR PRAY LOVE Salon"
                     className="w-full h-full object-cover scale-110"
                     loading="lazy"
                   />
@@ -308,7 +308,7 @@ export default function AboutPage() {
                   variants={fadeUp}
                   className="font-sans text-sm tracking-[0.2em] uppercase text-rose-dark mb-4"
                 >
-                  Est. 2015
+                  Est. 2009
                 </motion.p>
 
                 {/* Heading */}
@@ -330,9 +330,8 @@ export default function AboutPage() {
                   variants={fadeUp}
                   className="font-sans text-espresso/70 leading-relaxed text-base md:text-lg mb-6"
                 >
-                  At Haircraft, we believe that beauty is not just about appearance—it is about how
-                  you feel. Founded opposite Gold Cinema in the heart of Dadar East, our salon has
-                  become a sanctuary where modern techniques meet timeless elegance.
+                  At HAIR PRAY LOVE, we believe that beauty is not just about appearance—it is about how
+                  you feel. Located in the heart of Khar West, our salon has become a sanctuary where modern techniques meet timeless elegance.
                 </motion.p>
 
                 <motion.p

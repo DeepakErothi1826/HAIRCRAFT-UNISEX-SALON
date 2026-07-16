@@ -45,7 +45,7 @@ function Navbar() {
           {/* ── Logo ── */}
           <Link to="/" className="flex-shrink-0">
             <span className="font-serif text-2xl font-bold text-espresso tracking-tight">
-              Haircraft.
+              HAIR PRAY LOVE
             </span>
           </Link>
 
@@ -82,13 +82,13 @@ function Navbar() {
           {/* ── Contact Info (desktop) ── */}
           <div className="hidden lg:flex flex-col items-end flex-shrink-0">
             <a
-              href="tel:+919876543210"
+              href="tel:+918850159641"
               className="font-sans text-sm text-espresso hover:text-rose-dark transition-colors duration-300"
             >
-              +91 98765 43210
+              +91 88501 59641
             </a>
             <span className="font-sans text-xs text-rose-dark mt-0.5 tracking-wide">
-                  {SITE.address.split(',')[1].trim()}, Mumbai
+                  Khar West, Mumbai
             </span>
           </div>
 
@@ -174,13 +174,13 @@ function Navbar() {
               {/* Contact info at bottom */}
               <div className="px-8 pb-10 border-t border-nude pt-6">
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+918850159641"
                   className="font-sans text-sm text-espresso hover:text-rose-dark transition-colors block"
                 >
-                  +91 98765 43210
+                  +91 88501 59641
                 </a>
                 <span className="font-sans text-xs text-rose-dark mt-1 block tracking-wide">
-              {SITE.address.split(',')[1].trim()}, Mumbai
+              Khar West, Mumbai
                 </span>
               </div>
             </motion.div>
